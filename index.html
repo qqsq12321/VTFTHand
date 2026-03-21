@@ -228,20 +228,6 @@
   </div>
 </section>
 
-<!-- System Demo -->
-<section>
-  <div class="container">
-    <h2 class="section-title">System Demo</h2>
-    <p class="video-section-desc">Real-time teleoperation demonstration of VTFTHand, showing hand keypoint detection via MediaPipe and motion retargeting pipeline.</p>
-    <div class="demo-video">
-      <video controls preload="metadata" poster="frames/frame_0040.png">
-        <source src="videos/system_demo.webm" type="video/webm">
-        Your browser does not support HTML5 video.
-      </video>
-    </div>
-  </div>
-</section>
-
 <!-- Video Comparisons -->
 <section>
   <div class="container">
@@ -249,6 +235,16 @@
     <p class="video-section-desc">
       Side-by-side comparison of our <strong>AEWD-Retargeting</strong> (left) versus baseline <strong>Dex-Retargeting</strong> (right) across seven dexterous hand types in MuJoCo simulation. Our method demonstrates smoother, more accurate motion retargeting, especially under visual noise and occlusion.
     </p>
+
+    <div class="hand-block">
+      <div class="hand-name">Input Source (Operator Hand)</div>
+      <div class="demo-video">
+        <video controls preload="metadata">
+          <source src="videos/system_demo.webm" type="video/webm">
+          Your browser does not support HTML5 video.
+        </video>
+      </div>
+    </div>
 
     <div class="hand-block">
       <div class="hand-name">Shadow Hand</div>
@@ -259,6 +255,20 @@
         </div>
         <div class="video-box">
           <video controls preload="metadata"><source src="videos/baseline/shadow_hand_right.mp4" type="video/mp4"></video>
+          <div class="video-label label-baseline">Baseline (Dex-Retargeting)</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="hand-block">
+      <div class="hand-name">Wuji Hand</div>
+      <div class="video-pair">
+        <div class="video-box">
+          <video controls preload="metadata"><source src="videos/ours/wuji_hand_mujoco.mp4" type="video/mp4"></video>
+          <div class="video-label label-ours">Ours (AEWD-Retargeting)</div>
+        </div>
+        <div class="video-box">
+          <video controls preload="metadata"><source src="videos/baseline/wuji_hand_right.mp4" type="video/mp4"></video>
           <div class="video-label label-baseline">Baseline (Dex-Retargeting)</div>
         </div>
       </div>
@@ -334,19 +344,6 @@
       </div>
     </div>
 
-    <div class="hand-block">
-      <div class="hand-name">Wuji Hand</div>
-      <div class="video-pair">
-        <div class="video-box">
-          <video controls preload="metadata"><source src="videos/ours/wuji_hand_mujoco.mp4" type="video/mp4"></video>
-          <div class="video-label label-ours">Ours (AEWD-Retargeting)</div>
-        </div>
-        <div class="video-box">
-          <video controls preload="metadata"><source src="videos/baseline/wuji_hand_right.mp4" type="video/mp4"></video>
-          <div class="video-label label-baseline">Baseline (Dex-Retargeting)</div>
-        </div>
-      </div>
-    </div>
   </div>
 </section>
 
