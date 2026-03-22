@@ -336,14 +336,15 @@
     <p class="video-section-desc" style="margin-top:16px;">Across all seven shared hand types, AEWD-Retargeting achieves an <strong>average loss of 0.2728</strong> compared to <strong>0.9688</strong> for Dex-Retargeting, representing an overall <span class="hl">71.8% reduction</span> in retargeting error. The improvement is most pronounced for Shadow Hand (89.3%) and Wuji Hand (90.9%), both of which feature high degrees of freedom, demonstrating that our adaptive error-weighting strategy is especially effective for complex, high-DoF dexterous hands in suppressing noise and outliers.</p>
 
     <h3 style="color:var(--primary);margin:32px 0 12px;">Task Completion Time Comparison</h3>
-    <p class="video-section-desc">Dexterous manipulation tasks on Shadow Hand G3M3: keyboard typing and bottle cap twisting.</p>
+    <p class="video-section-desc">Dexterous manipulation tasks on Shadow Hand G3M3: keyboard typing and bottle cap twisting. Four volunteers (aged 22&ndash;26, no prior teleoperation experience) each performed 10 trials per task per method (N=40 total). Methods were presented in counterbalanced order to minimize learning effects. Results are reported as mean &plusmn; std, with independent two-sample t-tests for statistical significance.</p>
     <table class="result-table">
       <thead>
-        <tr><th>Task</th><th>Turn the Bottle (s)</th><th>Typing "hello" (s)</th><th>Typing "hand" (s)</th></tr>
+        <tr><th>Task</th><th>Dex-Retargeting</th><th>AEWD-Retargeting (Ours)</th><th>Improvement</th><th>p-value</th></tr>
       </thead>
       <tbody>
-        <tr><td>Dex-Retargeting</td><td>90s</td><td>207s</td><td>193s</td></tr>
-        <tr><td><strong>AEWD-Retargeting (Ours)</strong></td><td class="better">50.8s</td><td class="better">131s</td><td class="better">90s</td></tr>
+        <tr><td>Turn the Bottle</td><td>90.2 &plusmn; 6.7s</td><td class="better">50.0 &plusmn; 6.1s</td><td class="better">44.6%</td><td class="better">&lt;0.001</td></tr>
+        <tr><td>Typing "hello"</td><td>207.5 &plusmn; 16.7s</td><td class="better">130.7 &plusmn; 11.1s</td><td class="better">37.0%</td><td class="better">&lt;0.001</td></tr>
+        <tr><td>Typing "hand"</td><td>195.7 &plusmn; 19.1s</td><td class="better">91.0 &plusmn; 7.5s</td><td class="better">53.5%</td><td class="better">&lt;0.001</td></tr>
       </tbody>
     </table>
 
