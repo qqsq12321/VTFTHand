@@ -232,11 +232,21 @@
 <section>
   <div class="container">
     <h2 class="section-title">Demo</h2>
-    <p class="video-section-desc">End-to-end demonstration of the VTFTHand system, showcasing teleoperation.</p>
+
+    <h3 style="color:var(--primary);margin-bottom:12px;">Hand-Only Teleoperation</h3>
+    <p class="video-section-desc">Real-time dexterous hand teleoperation using monocular camera input, demonstrating hand keypoint detection via MediaPipe and AEWD-Retargeting pipeline.</p>
     <div class="demo-video">
       <video controls preload="metadata">
         <source src="videos/demo.mp4" type="video/mp4">
         Your browser does not support HTML5 video.
+      </video>
+    </div>
+
+    <h3 style="color:var(--primary);margin:32px 0 12px;">Hand+Arm Teleoperation</h3>
+    <p class="video-section-desc">Full hand-arm teleoperation demonstration using Meta Quest 3 as the input device, with Kinova robotic arm and Wuji (舞肌) dexterous hand as the execution platform.</p>
+    <div class="demo-video">
+      <video controls preload="metadata">
+        <source src="videos/quest_hand_arm.mp4" type="video/mp4">
       </video>
     </div>
   </div>
@@ -291,19 +301,6 @@
         <video controls preload="metadata"><source src="videos/object_grasp/baseline/dex_grasping.mp4" type="video/mp4"></video>
         <div class="video-label label-baseline">Baseline (Vision-Only Grasping)</div>
       </div>
-    </div>
-  </div>
-</section>
-
-<!-- Hand+Arm Teleoperation -->
-<section>
-  <div class="container">
-    <h2 class="section-title">Hand+Arm Teleoperation</h2>
-    <p class="video-section-desc">Full hand-arm teleoperation demonstration using Meta Quest 3 as the input device, with Kinova robotic arm and Wuji (舞肌) dexterous hand as the execution platform.</p>
-    <div class="demo-video">
-      <video controls preload="metadata">
-        <source src="videos/quest_hand_arm.mp4" type="video/mp4">
-      </video>
     </div>
   </div>
 </section>
