@@ -308,6 +308,32 @@
   </div>
 </section>
 
+<!-- Retargeting Benchmark -->
+<section>
+  <div class="container">
+    <h2 class="section-title">Retargeting Benchmark</h2>
+    <p class="video-section-desc">Quantitative comparison of average retargeting loss between our <strong>AEWD-Retargeting</strong> and baseline <strong>Dex-Retargeting</strong> across seven shared dexterous hand types. Lower loss indicates more accurate motion retargeting. Our method also supports three additional hands (LinkerHand L21, RoHand, Unitree Dex5) not available in the baseline.</p>
+    <table class="result-table">
+      <thead>
+        <tr><th>Hand</th><th>Dex-Retargeting (Loss)</th><th>AEWD-Retargeting / Ours (Loss)</th><th>Improvement</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Shadow Hand</td><td>0.9692</td><td class="better">0.1039</td><td class="better">89.3%</td></tr>
+        <tr><td>Wuji Hand</td><td>0.9662</td><td class="better">0.0877</td><td class="better">90.9%</td></tr>
+        <tr><td>Allegro Hand</td><td>0.9720</td><td class="better">0.5616</td><td class="better">42.2%</td></tr>
+        <tr><td>Inspire Hand</td><td>0.9704</td><td class="better">0.3789</td><td class="better">61.0%</td></tr>
+        <tr><td>Ability Hand</td><td>0.9636</td><td class="better">0.3315</td><td class="better">65.6%</td></tr>
+        <tr><td>LEAP Hand</td><td>0.9704</td><td class="better">0.1777</td><td class="better">81.7%</td></tr>
+        <tr><td>SVH Hand</td><td>0.9701</td><td class="better">0.2680</td><td class="better">72.4%</td></tr>
+        <tr style="background:#f8f9fa;"><td>LinkerHand L21</td><td>&mdash;</td><td>0.1757</td><td>&mdash;</td></tr>
+        <tr style="background:#f8f9fa;"><td>RoHand</td><td>&mdash;</td><td>0.6174</td><td>&mdash;</td></tr>
+        <tr style="background:#f8f9fa;"><td>Unitree Dex5</td><td>&mdash;</td><td>0.5431</td><td>&mdash;</td></tr>
+      </tbody>
+    </table>
+    <p class="video-section-desc" style="margin-top:16px;">Across all seven shared hand types, AEWD-Retargeting achieves an <strong>average loss of 0.2728</strong> compared to <strong>0.9688</strong> for Dex-Retargeting, representing an overall <span class="hl">71.8% reduction</span> in retargeting error. The improvement is most pronounced for Shadow Hand (89.3%) and Wuji Hand (90.9%), demonstrating the effectiveness of our adaptive error-weighting strategy in suppressing noise and outliers.</p>
+  </div>
+</section>
+
 <!-- Results -->
 <section>
   <div class="container">
