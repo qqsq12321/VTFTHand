@@ -308,10 +308,12 @@
   </div>
 </section>
 
-<!-- Retargeting Benchmark -->
+<!-- Experimental Results -->
 <section>
   <div class="container">
-    <h2 class="section-title">Retargeting Benchmark</h2>
+    <h2 class="section-title">Experimental Results</h2>
+
+    <h3 style="color:var(--primary);margin-bottom:12px;">Retargeting Loss Comparison</h3>
     <p class="video-section-desc">Quantitative comparison of average retargeting loss between our <strong>AEWD-Retargeting</strong> and baseline <strong>Dex-Retargeting</strong> across seven shared dexterous hand types. Lower loss indicates more accurate motion retargeting. Our method also supports three additional hands (LinkerHand L21, RoHand, Unitree Dex5) not available in the baseline.</p>
     <table class="result-table">
       <thead>
@@ -331,15 +333,8 @@
       </tbody>
     </table>
     <p class="video-section-desc" style="margin-top:16px;">Across all seven shared hand types, AEWD-Retargeting achieves an <strong>average loss of 0.2728</strong> compared to <strong>0.9688</strong> for Dex-Retargeting, representing an overall <span class="hl">71.8% reduction</span> in retargeting error. The improvement is most pronounced for Shadow Hand (89.3%) and Wuji Hand (90.9%), demonstrating the effectiveness of our adaptive error-weighting strategy in suppressing noise and outliers.</p>
-  </div>
-</section>
 
-<!-- Results -->
-<section>
-  <div class="container">
-    <h2 class="section-title">Experimental Results</h2>
-
-    <h3 style="color:var(--primary);margin-bottom:12px;">Task Completion Time Comparison</h3>
+    <h3 style="color:var(--primary);margin:32px 0 12px;">Task Completion Time Comparison</h3>
     <p class="video-section-desc">Dexterous manipulation tasks on Shadow Hand G3M3: keyboard typing and bottle cap twisting.</p>
     <table class="result-table">
       <thead>
