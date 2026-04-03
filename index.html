@@ -335,6 +335,26 @@
     </table>
     <p class="video-section-desc" style="margin-top:16px;">Across all seven shared hand types, AEWD-Retargeting achieves an <strong>average loss of 0.2728</strong> compared to <strong>0.9688</strong> for Dex-Retargeting, representing an overall <span class="hl">71.8% reduction</span> in retargeting error. The improvement is most pronounced for Shadow Hand (89.3%) and Wuji Hand (90.9%), both of which feature high degrees of freedom, demonstrating that our adaptive error-weighting strategy is especially effective for complex, high-DoF dexterous hands in suppressing noise and outliers.</p>
 
+    <h3 style="color:var(--primary);margin:32px 0 12px;">Pinch Fidelity Evaluation</h3>
+    <p class="video-section-desc">To quantitatively evaluate retargeting fidelity, we analyze thumb-to-fingertip distances across four pinch configurations (Thumb&ndash;Index, Thumb&ndash;Middle, Thumb&ndash;Ring, Thumb&ndash;Pinky) on the Shadow Hand. Four representative frames (215, 304, 407, 582) are selected, and Euclidean distances between thumb tip and each fingertip are computed via forward kinematics and compared against MediaPipe human-hand landmarks. AEWD-Retargeting closely tracks the human reference across all fingers, achieving an overall MAE of <span class="hl">0.75 cm</span> and Pearson R&sup2;&nbsp;=&nbsp;0.938. In contrast, DEX-Retargeting yields an overall MAE of <span class="hl">3.56 cm</span> (4.7&times; higher) and R&sup2;&nbsp;=&nbsp;0.016, indicating it fails to preserve the relative structure of human pinch gestures.</p>
+    <div style="margin-bottom:20px;">
+      <a href="picture/pinch_paper_main.png" target="_blank"><img src="picture/pinch_paper_main.png" alt="Pinch fidelity comparison between AEWD-Retargeting, DEX-Retargeting, and human hand" style="width:100%;border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,0.08);cursor:zoom-in;"></a>
+      <p style="text-align:center;font-size:0.82rem;color:var(--text-light);margin-top:8px;">Pinch fidelity comparison. Top: four evaluation frames with MediaPipe landmarks. Bottom: thumb-to-fingertip distance (cm) per finger and pinch posture. Insets report per-method MAE relative to the human reference.</p>
+    </div>
+    <table class="result-table">
+      <thead>
+        <tr><th>Finger</th><th>Human MAE (cm)</th><th>AEWD-Retargeting MAE (cm)</th><th>DEX-Retargeting MAE (cm)</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Index</td><td>0.00</td><td class="better">0.31</td><td>3.23</td></tr>
+        <tr><td>Middle</td><td>0.00</td><td class="better">1.04</td><td>3.43</td></tr>
+        <tr><td>Ring</td><td>0.00</td><td class="better">0.78</td><td>4.13</td></tr>
+        <tr><td>Pinky</td><td>0.00</td><td class="better">0.87</td><td>3.44</td></tr>
+        <tr style="font-weight:700;"><td>Overall</td><td>0.00</td><td class="better">0.75</td><td>3.56</td></tr>
+        <tr style="background:#f8f9fa;"><td colspan="2">Pearson R&sup2; (vs. Human)</td><td class="better">0.9378</td><td>0.0161</td></tr>
+      </tbody>
+    </table>
+
     <h3 style="color:var(--primary);margin:32px 0 12px;">Task Completion Time Comparison</h3>
     <p class="video-section-desc">Dexterous manipulation tasks on Shadow Hand G3M3: keyboard typing and bottle cap twisting. Four volunteers (aged 22&ndash;26, no prior teleoperation experience) each performed 10 trials per task per method (N=40 total). Methods were presented in counterbalanced order to minimize learning effects. Results are reported as mean &plusmn; std, with independent two-sample t-tests for statistical significance.</p>
     <table class="result-table">
