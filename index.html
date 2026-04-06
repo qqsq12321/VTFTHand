@@ -195,7 +195,7 @@
       For motion retargeting, we propose an <strong>Adaptive Error-Weight Dex-Retargeting (AEWD-Retargeting)</strong> algorithm, which employs an adaptive error-weighting to suppress the influence of noise and outliers. For tactile interaction, we design an <strong>adaptive tactile grasping algorithm</strong> based on Pressure Sensitive Touch (PST) fingertip sensors, achieving closed-loop force-controlled grasping in monocular teleoperation for the first time.
     </p>
     <p class="abstract-text">
-      Experimental results show that, compared to baseline, VTFTHand improves grasping success rates by <span class="hl">20% and 50%</span>, reduces task completion times by <span class="hl">20% and 40%</span>, and enhances manipulation efficiency by <span class="hl">36% and 53%</span>. These results validate the superiority of our approach in precision, robustness, and efficiency, while also demonstrating the system's scalability and practical applicability.
+      Experimental results show that, compared to baseline, <strong>AEWD-Retargeting reduces task completion time by 32.0&ndash;54.9%</strong> across three dexterous manipulation tasks (all p &lt; 0.01), while the <strong>tactile grasping module improves the overall grasping success rate from 70.6% to 92.5%</strong> and reduces average grasping duration by 35.1%. These results validate the superiority of our approach in precision, robustness, and efficiency, while also demonstrating the system's scalability and practical applicability.
     </p>
     <div class="keywords">
       <strong>Keywords: </strong>
@@ -218,7 +218,7 @@
       </div>
       <div class="contrib-card">
         <h3><span class="num">2</span>Tactile Adaptive Grasping</h3>
-        <p>A fingertip tactile adaptive <strong>PI hybrid force control</strong> algorithm integrating preloaded object pose, adaptive pressure fine-tuning, and robust PI control. First closed-loop tactile grasping in monocular vision teleoperation. Success rate: <span class="hl">67.5% &rarr; 92.5%</span>.</p>
+        <p>A fingertip tactile adaptive <strong>PI hybrid force control</strong> algorithm integrating preloaded object pose, adaptive pressure fine-tuning, and robust PI control. First closed-loop tactile grasping in monocular vision teleoperation. Success rate: <span class="hl">70.6% &rarr; 92.5%</span>.</p>
       </div>
       <div class="contrib-card">
         <h3><span class="num">3</span>VTFTHand System Framework</h3>
@@ -356,30 +356,42 @@
     </table>
 
     <h3 style="color:var(--primary);margin:32px 0 12px;">Task Completion Time Comparison</h3>
-    <p class="video-section-desc">Dexterous manipulation tasks on Shadow Hand G3M3: keyboard typing and bottle cap twisting. Four volunteers (aged 22&ndash;26, no prior teleoperation experience) each performed 10 trials per task per method (N=40 total). Methods were presented in counterbalanced order to minimize learning effects. Results are reported as mean &plusmn; std, with independent two-sample t-tests for statistical significance.</p>
+    <p class="video-section-desc">Dexterous manipulation tasks on Shadow Hand G3M3: keyboard typing and bottle cap twisting. Four volunteers (aged 22&ndash;26, no prior teleoperation experience) each performed 20 trials per task per method (N=80 total). Methods were presented in counterbalanced order to minimize learning effects. Results are reported as mean &plusmn; std, with independent two-sample t-tests for statistical significance.</p>
     <table class="result-table">
       <thead>
         <tr><th>Task</th><th>Dex-Retargeting</th><th>AEWD-Retargeting (Ours)</th><th>Improvement</th><th>p-value</th></tr>
       </thead>
       <tbody>
-        <tr><td>Turn the Bottle</td><td>90.2 &plusmn; 6.7s</td><td class="better">50.0 &plusmn; 6.1s</td><td class="better">44.6%</td><td class="better">&lt;0.01</td></tr>
-        <tr><td>Typing "hello"</td><td>207.5 &plusmn; 16.7s</td><td class="better">130.7 &plusmn; 11.1s</td><td class="better">37.0%</td><td class="better">&lt;0.01</td></tr>
-        <tr><td>Typing "hand"</td><td>195.7 &plusmn; 19.1s</td><td class="better">91.0 &plusmn; 7.5s</td><td class="better">53.5%</td><td class="better">&lt;0.01</td></tr>
+        <tr><td>Turn the Bottle</td><td>80.2 &plusmn; 6.7s</td><td class="better">44.7 &plusmn; 6.1s</td><td class="better">44.3%</td><td class="better">&lt;0.01</td></tr>
+        <tr><td>Typing "hello"</td><td>196.5 &plusmn; 16.7s</td><td class="better">133.7 &plusmn; 11.1s</td><td class="better">32.0%</td><td class="better">&lt;0.01</td></tr>
+        <tr><td>Typing "hand"</td><td>179.7 &plusmn; 19.1s</td><td class="better">81.0 &plusmn; 7.5s</td><td class="better">54.9%</td><td class="better">&lt;0.01</td></tr>
       </tbody>
     </table>
-    <p class="video-section-desc" style="margin-top:16px;">AEWD-Retargeting significantly reduces task completion time across all three tasks (all p &lt; 0.01). The bottle-cap twisting task shows a <span class="hl">44.6%</span> reduction in completion time, while typing "hello" and "hand" improve by <span class="hl">37.0%</span> and <span class="hl">53.5%</span>, respectively. Notably, AEWD-Retargeting also exhibits lower variance (std), indicating more consistent and stable performance across different operators and trials. These improvements stem from the adaptive error-weighting mechanism, which enhances retargeting accuracy and reduces the need for repeated corrective movements during fine manipulation.</p>
+    <p class="video-section-desc" style="margin-top:16px;">AEWD-Retargeting significantly reduces task completion time across all three tasks (all p &lt; 0.01). The bottle-cap twisting task shows a <span class="hl">44.3%</span> reduction in completion time, while typing "hello" and "hand" improve by <span class="hl">32.0%</span> and <span class="hl">54.9%</span>, respectively. Notably, AEWD-Retargeting also exhibits lower variance (std), indicating more consistent and stable performance across different operators and trials. These improvements stem from the adaptive error-weighting mechanism, which enhances retargeting accuracy and reduces the need for repeated corrective movements during fine manipulation.</p>
 
-    <h3 style="color:var(--primary);margin:32px 0 12px;">Grasping Success Rate Comparison</h3>
-    <p class="video-section-desc">Grasp-and-release trials across four object types (10 trials each). Thanks to the improved retargeting accuracy from AEWD-Retargeting and the introduction of tactile-adaptive closed-loop force control via PST fingertip sensors, our method achieves significantly higher grasping success rates and shorter completion times.</p>
+    <h3 style="color:var(--primary);margin:32px 0 12px;">Grasping Performance Comparison</h3>
+    <p class="video-section-desc">Grasp-and-release trials across four object types. Four volunteers each performed 10 trials per object per method (40 trials per object-method combination). Results report success rate and average grasping duration (mean &plusmn; std, in seconds), with independent two-sample t-tests for statistical significance.</p>
     <table class="result-table">
       <thead>
-        <tr><th>Method</th><th>Bottle</th><th>Mug</th><th>Banana</th><th>Ball</th></tr>
+        <tr>
+          <th rowspan="2">Object</th>
+          <th colspan="2">Success Rate</th>
+          <th colspan="2">Avg. Duration (s)</th>
+          <th rowspan="2">p-value</th>
+        </tr>
+        <tr>
+          <th>Baseline</th><th>Ours</th><th>Baseline</th><th>Ours</th>
+        </tr>
       </thead>
       <tbody>
-        <tr><td>AnyTeleop / Dex-Retargeting</td><td>90% / 7.0s</td><td>50% / 17.0s</td><td>60% / 13.3s</td><td>70% / 13.4s</td></tr>
-        <tr><td><strong>Ours (VTFTHand)</strong></td><td class="better">100% / 6.3s</td><td class="better">80% / 12.5s</td><td class="better">100% / 8.0s</td><td class="better">90% / 7.0s</td></tr>
+        <tr><td>Bottle</td><td>87.5% (35/40)</td><td class="better">97.5% (39/40)</td><td>7.4 &plusmn; 4.1</td><td class="better">5.8 &plusmn; 2.1</td><td class="better">&lt;0.02</td></tr>
+        <tr><td>Mug</td><td>57.5% (23/40)</td><td class="better">82.5% (33/40)</td><td>18.3 &plusmn; 10.2</td><td class="better">13.2 &plusmn; 3.8</td><td class="better">&lt;0.01</td></tr>
+        <tr><td>Banana</td><td>62.5% (25/40)</td><td class="better">97.5% (39/40)</td><td>12.6 &plusmn; 4.5</td><td class="better">7.5 &plusmn; 2.7</td><td class="better">&lt;0.01</td></tr>
+        <tr><td>Ball</td><td>75.0% (30/40)</td><td class="better">92.5% (37/40)</td><td>14.1 &plusmn; 5.7</td><td class="better">7.3 &plusmn; 3.1</td><td class="better">&lt;0.01</td></tr>
+        <tr style="font-weight:700;"><td>Overall</td><td>70.6% (113/160)</td><td class="better">92.5% (148/160)</td><td>13.1 &plusmn; 7.2</td><td class="better">8.5 &plusmn; 3.9</td><td class="better">&lt;0.01</td></tr>
       </tbody>
     </table>
+    <p class="video-section-desc" style="margin-top:16px;">Our tactile-adaptive method significantly outperforms the baseline across all object types. The overall grasping success rate improves from <span class="hl">70.6% to 92.5%</span>, and the average grasping duration is reduced from 13.1&thinsp;s to <span class="hl">8.5&thinsp;s (35.1% reduction)</span>. The most notable gains appear for the banana (62.5% &rarr; 97.5%) and mug (57.5% &rarr; 82.5%), which are particularly challenging due to irregular geometry and wide diameter, respectively.</p>
   </div>
 </section>
 
